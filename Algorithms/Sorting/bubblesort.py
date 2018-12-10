@@ -1,5 +1,6 @@
 import random
 A=random.sample(range(100),random.randint(1,10))
+print(A)
 check=1
 for x in A:
     check=1
