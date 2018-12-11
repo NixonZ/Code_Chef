@@ -11,52 +11,35 @@ int *msort(int A[],int n)
     B[i]=A[i];
   for(int i=0;i<n-k;i++)
     C[i]=A[i+k];
-  if(k==2)
-  {
-    if(B[0]>B[1])
-    {
-      temp=B[0];
-      B[0]=B[1];
-      B[1]=temp;
-    }
-  }
-  if((n-k)==2)
-  {
-    if(C[0]>C[1])
-    {
-      temp=C[0];
-      C[0]=C[1];
-      C[1]=temp;
-    }
-  }
   if(k!=1)
     msort(B,k);
   if((n-k)!=1)
     msort(C,n-k);
-  if(B[k-1]>C[0])
+  int i=0,j=0,l=0;
+  while((i<k)&&(j<n-k))
   {
-    temp=C[0];
-    C[0]=B[k-1];
-    B[k-1]=temp;
+    if(B[i]<C[j])
+      A[l++]=B[i++];
+    else
+      A[l++]=C[j++];
   }
-  for(int i=0;i<k;i++)
-    A[i]=B[i];
-  for(int i=0;i<n-k;i++)
-    A[i+k]=C[i];
+  while(i<k)
+    A[l++]=B[i++];
+  while(j<n-k)
+    A[l++]=C[j++];
   return A;
 }
 int main()
 {
   srand(time(0));
-  int length=rand()%10;
+  int length=rand()%100000;
   int A[length];
   for(int i=0;i<length;i++)
   {
-    A[i]=rand()%100;
+    A[i]=rand()%1000;
   }
-  for(int i=0;i<length;i++)
-    msort(A,length);
+  msort(A,length);
   for(int i=0;i<length;i++)
     cout<<A[i]<<',';
-  cout<<'\b';  
+  cout<<'\b';
 }
