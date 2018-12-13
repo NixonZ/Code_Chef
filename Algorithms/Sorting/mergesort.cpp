@@ -36,7 +36,7 @@ int main()
   int A[length];
   for(int i=0;i<length;i++)
   {
-    A[i]=rand()%1000;
+    A[i]=rand()%100;
   }
   msort(A,length);
   for(int i=0;i<length;i++)

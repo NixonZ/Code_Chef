@@ -29,7 +29,7 @@ def mergesort(A,n):
     return A
 import random
 
-A=random.sample(range(1000000000000000),random.randint(1,100000))
+A=random.sample(range(10000),random.randint(1,10000))
 print(A)
 for x in A:
     mergesort(A,len(A))
