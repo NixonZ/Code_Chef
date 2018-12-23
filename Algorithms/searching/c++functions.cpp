@@ -18,15 +18,16 @@ int main()
   cout<<"random number selected is " <<x <<endl;
   //lower_bound returns pointer to first array element whose value is atleast x
   auto k=lower_bound(A,A+length,x)-A;
-  if(k<length && A[k]==x)
-    cout<<"Element found at " <<k+1 <<endl;
+  if(A[k]==*(A+length))
+    cout<<"Least Element not found\n";
   else if(k<length)
     cout<<"Least element is at " <<k+1 <<" and is "<<A[k] <<endl;
   //upper_bound returns pointer to first array element whose value is atmost x
   //equal range returns both of them
+  //if not found these functions return end()
   auto l=upper_bound(A,A+length,x)-A;
-  if(l<length && A[l]==x)
-    cout<<"Element found at " <<l+1 <<endl;
+  if(A[l]==*(A+length))
+    cout<<"Atmost Element not found\n";
   else if(l<length)
     cout<<"atmost element is at " <<l+1 <<" and is "<<A[l] <<endl;
   //equal range returns both
