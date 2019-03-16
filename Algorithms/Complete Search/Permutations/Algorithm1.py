@@ -9,7 +9,7 @@ permutation=[]
 def search():
     if(len(permutation)==n):
         print(permutation)
-    else=[] 
+    else:
         for i in range(0,n):
             if(chosen[i]):
                 continue

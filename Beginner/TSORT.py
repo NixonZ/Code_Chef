@@ -4,9 +4,9 @@ def mergesort(A,n):
     B=[A[x] for x in range(k)]
     C=[A[x] for x in range(k,n)]
     if k!=1:
-        B=mergesort(B,k)
+        mergesort(B,k)
     if (n-k)!=1:
-        C=mergesort(C,n-k)
+        mergesort(C,n-k)
     i=0
     j=0
     l=0
@@ -27,8 +27,12 @@ def mergesort(A,n):
         j+=1
         l+=1
     return A
-import random
 
-A=random.sample(range(1000),random.randint(1,100))
-print(A)
-print(mergesort(A,len(A)))
+T=int(input())
+A=[]
+for i in range(T):
+    temp=int(input)
+    A.append(temp)
+A=mergesort(A,len(A))
+for x in A:
+    print(A)
